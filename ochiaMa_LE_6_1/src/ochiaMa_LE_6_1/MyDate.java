@@ -2,6 +2,8 @@ package ochiaMa_LE_6_1;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class MyDate {
     private int year;
@@ -9,11 +11,20 @@ public class MyDate {
     private int day;
 
     public MyDate() {
-        setDate(System.currentTimeMillis());
+    	 GregorianCalendar cal = new GregorianCalendar();
+         year = cal.get(Calendar.YEAR);
+         month = cal.get(Calendar.MONTH);
+         day = cal.get(Calendar.DAY_OF_MONTH);
     }
 
     public MyDate(long elapsedTime) {
-        setDate(elapsedTime);
+        GregorianCalendar cal = new GregorianCalendar();
+
+        cal.setTimeInMillis(elapsedTime);
+
+        year = cal.get(Calendar.YEAR);
+        month = cal.get(Calendar.MONTH);
+        day = cal.get(Calendar.DAY_OF_MONTH);
     }
 
     public MyDate(int year, int month, int day) {
@@ -47,10 +58,11 @@ public class MyDate {
     }
 
     public void setDate(long elapsedTime) {
-        LocalDate localDate = LocalDate.ofInstant(java.time.Instant.ofEpochMilli(elapsedTime), ZoneId.systemDefault());
-        this.year = localDate.getYear();
-        this.month = localDate.getMonthValue() - 1;
-        this.day = localDate.getDayOfMonth();
+        GregorianCalendar cal = new GregorianCalendar();
+        cal.setTimeInMillis(elapsedTime);
+        year = cal.get(Calendar.YEAR);
+        month = cal.get(Calendar.MONTH);
+        day = cal.get(Calendar.DAY_OF_MONTH);
     }
 
     @Override

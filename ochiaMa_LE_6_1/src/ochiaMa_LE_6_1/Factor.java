@@ -10,7 +10,6 @@ public class Factor {
         primeFactorize(number);
     }
 
-    // Abstract method to be implemented by subclasses
     protected void primeFactorize(int number) {
     }
 

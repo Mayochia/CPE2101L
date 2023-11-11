@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class PerfectSquareMain {
 	
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
         System.out.print("Enter an integer m: ");
-        int num = scanner.nextInt();
+        int num = input.nextInt();
 
         PerfectSquare factorization = new PerfectSquare(num);
         int n = factorization.findProdN();

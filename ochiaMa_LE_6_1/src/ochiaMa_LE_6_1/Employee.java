@@ -12,7 +12,9 @@ public class Employee extends Person{
 	private double salary;
 	private MyDate hireDate;
 	
-	Employee(String name, String address, int phoneNum, String email, String office, double salary, MyDate hireDate){
+	Employee(String name, String address, String phoneNum, String email, 
+			 String office,double salary, MyDate hireDate){
+		
 		super(name, address,phoneNum, email);
 		this.office = office;
 		this.salary = salary;
@@ -39,8 +41,8 @@ public class Employee extends Person{
 	}
 	@Override
 	public String toString() {
-		return "" + super.toString() + "Employee's office: " + this.office + "\n" + 
-				"Employee's salary: " + salary + "\n" + "Employee's Date Hired: " + hireDate.toString() + "\n";
+		return "" + super.toString() + "\n" +"Office: " + this.office + "\n" + 
+				"Salary: " + salary + "\n" + "Date Hired: " + hireDate.toString();
 	}
 
 }

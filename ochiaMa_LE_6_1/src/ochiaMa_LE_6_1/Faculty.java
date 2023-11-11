@@ -4,7 +4,7 @@ public class Faculty extends Employee {
 	private String officeHours;
 	private String rank;
 	
-	Faculty(String name, String address, int phoneNum, String email, String office, double salary, MyDate hireDate, String officeHours, String rank) {
+	Faculty(String name, String address, String phoneNum, String email, String office, double salary, MyDate hireDate, String officeHours, String rank) {
 		super(name, address, phoneNum, email, office, salary, hireDate);
 		this.officeHours = officeHours;
 		this.rank = rank;
@@ -24,7 +24,7 @@ public class Faculty extends Employee {
 	}
 	@Override
 	public String toString() {
-		return "" + super.toString() + "Faculty's offce hours: " + officeHours + "\n" + "Faculty's rank: " + rank;
+		return "" + super.toString()+ "\n" + "Office hours: " + officeHours + "\n" + "Rank: " + rank;
     }
 
 }

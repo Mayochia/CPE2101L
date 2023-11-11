@@ -10,10 +10,18 @@ public class Person {
 
 	private String name;
 	private String address;
-	private int phoneNum;
+	private String phoneNum;
 	private String email;
 	
-	Person(String name, String address, int phoneNum, String email){
+	Person(){
+		
+	}
+	
+	Person(String name){
+		this.name = name;
+	}
+	
+	Person(String name, String address, String phoneNum, String email){
 		this.name = name;
 		this.address = address;
 		this.phoneNum = phoneNum;
@@ -26,7 +34,7 @@ public class Person {
 	public String getAddress() {
 		return this.address;
 	}
-	public int getPhoneNum() {
+	public String getPhoneNum() {
 		return this.phoneNum;
 	}
 	public String getEmail() {
@@ -38,7 +46,7 @@ public class Person {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public void setPhoneNum(int phoneNum) {
+	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
 	}
 	public void setEmail(String email) {
@@ -46,10 +54,9 @@ public class Person {
 	}
 	@Override
 	public String toString() {
-//		return "Person: " + name;
 		return "Name: " + name + "\n" + "Address: " + address
 				+ "\n" + "Phone Number: " + phoneNum + "\n" + 
-				"Email address: " + email + "\n";
+				"Email address: " + email;
 	}
 
 }
