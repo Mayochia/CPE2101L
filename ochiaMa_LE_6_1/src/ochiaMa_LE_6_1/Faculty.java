@@ -16,7 +16,7 @@ public class Faculty extends Employee {
 	public String getRank() {
 		return this.rank;
 	}
-	public void setTitle(String officeHours) {
+	public void setOfficeHours(String officeHours) {
 		this.officeHours = officeHours;
 	}
 	public void setRank(String rank) {

@@ -1,11 +1,6 @@
-/**
- * 
- */
 package ochiaMa_LE_6_1;
 
-/**
- * 
- */
+
 public class Employee extends Person{
 
 	private String office;

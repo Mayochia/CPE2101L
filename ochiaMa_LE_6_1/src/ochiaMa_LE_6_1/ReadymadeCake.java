@@ -19,6 +19,10 @@ public class ReadymadeCake extends Cake{
 		return this.quantity;
 	}
 	
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
 	@Override
 	public String toString() {
 		return "Name: "+ name + "\nRate: " + rate + "\nQuantity:"  + quantity + "\nPrice: " + calcPrice() + "\n";

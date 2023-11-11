@@ -6,17 +6,16 @@ import java.util.Set;
 
 
 public class PerfectSquare extends Factor {
-	public PerfectSquare(int number) {
-        super(number);
-    }
+	PerfectSquare(int number) {
+		super(number);
+	}
 
-    @Override
-    protected void primeFactorize(int number) {
-
-        for (int i = 2; i <= number; i++) {
-            while (number % i == 0) {
-                factors.add(i);
-                number /= i;
+	@Override
+	protected void primeFactorize(int number) {
+		for (int i = 2; i <= number; i++) {
+			while (number % i == 0) {
+				factors.add(i);
+				number /= i;
             }
         }
     }
