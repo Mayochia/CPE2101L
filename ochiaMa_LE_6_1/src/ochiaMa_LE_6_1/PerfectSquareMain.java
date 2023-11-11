@@ -15,6 +15,8 @@ public class PerfectSquareMain {
 
         System.out.println("The smallest number n for m * n to be a perfect square is " + n);
         System.out.println("m * n is " + (num * n));
+        
+        input.close();
 	}
 
 }
