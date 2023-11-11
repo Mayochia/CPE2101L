@@ -1,7 +1,5 @@
 package ochiaMa_LE_6_1;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
