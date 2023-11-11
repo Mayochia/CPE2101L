@@ -23,7 +23,7 @@ public class School {
 //		MyDate hireDate = new MyDate(561555550000L);
 
    	 	Person person = new Person("May", "Cebu", "9984493", "mayochia@gmail.com");
-        Student student = new Student("Andes", "Leyte","985500","mithcam@gmail.com", "Senior");
+        Student student = new Student("Andes", "Leyte","985500","mithcam@gmail.com", Student.SENIOR);
 
 //        MyDate employeeHireDate = new MyDate(2022, 2, 15);  // Year, Month (0-based), Day
         Employee employee = new Employee("Aron", "Aklan","9986600","aron@gmail.com", "DCPE", 50000, new MyDate(561555550000L));
