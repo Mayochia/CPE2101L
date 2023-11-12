@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Factor {
 	protected ArrayList<Integer> factors;
+	
+	Factor(){
+
+	}
 
     Factor(int number) {
         factors = new ArrayList<>();

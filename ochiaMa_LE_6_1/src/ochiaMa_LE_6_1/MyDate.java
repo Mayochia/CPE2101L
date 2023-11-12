@@ -7,8 +7,8 @@ public class MyDate {
     private int year;
     private int month;
     private int day;
-
-    public MyDate() {
+    
+    MyDate() {
     	 GregorianCalendar cal = new GregorianCalendar();
          year = cal.get(Calendar.YEAR);
          month = cal.get(Calendar.MONTH);

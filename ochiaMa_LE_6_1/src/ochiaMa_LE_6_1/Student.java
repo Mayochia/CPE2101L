@@ -6,6 +6,10 @@ public class Student extends Person {
     public static final String JUNIOR = "Junior";
     public static final String SENIOR = "Senior";
     protected String status;
+    
+    Student(){
+    	super();
+    }
 
     Student(String name) {
         super(name);

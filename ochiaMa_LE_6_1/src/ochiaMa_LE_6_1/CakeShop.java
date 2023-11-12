@@ -7,15 +7,18 @@ public class CakeShop {
 	
 	public static void displayCakes(Cake[] cakes) {
 		for(int i=0; i < cakes.length; i++) {
+			System.out.print(i+1 + ". ");
 			System.out.println(cakes[i].toString());
 		}
 	}
 	
 	public static void displayRMC(Cake[] cakes) {
-		System.out.println("\t---------------------------ReadyMadeCakes-------------------------");
-		for(int i=8; i<15; i++) {
-			System.out.println(cakes[i].toString());
-		}
+	    System.out.println("\t---------------------------ReadyMadeCakes-------------------------");
+	    for (int i = 0; i < cakes.length; i++) {
+	        if (cakes[i] instanceof ReadymadeCake) {
+	            System.out.println(cakes[i].toString());
+	        }
+	    }
 	}
 	
 	
@@ -77,65 +80,86 @@ public class CakeShop {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Cake[] cakes = new Cake[SIZE];
-//		char choice;
-//		String s;
-//		String name_cake;
-//		double rate_cake, weight_cake;
-//		int quantity_cake;
-				
-//		for(int i = 0; i < SIZE; i++) {
-//			System.out.println("==================================");
-//			System.out.println("Cake #" + (i+1));
-//			System.out.print("Enter NAME of the cake: ");
-//			name_cake = input.next();
-//			System.out.print("Enter RATE of the cake: ");
-//			rate_cake = input.nextDouble();
-//			System.out.print("[O] Order cake or [R] Ready-made Cake : ");
-//			choice = input.next().charAt(0);
-//			s = "" + choice;
-//			s = s.toLowerCase();
-//			
-//			switch (s) {
-//				case "o":
-//					System.out.print("Enter cake weight: ");
-//					weight_cake = input.nextDouble();
-//					cakes[i] = new OrderCake(name_cake,rate_cake,weight_cake);
-//					System.out.println("==================================");
-//					break;
-//				case "r":
-//					System.out.print("Enter quantity: ");
-//					quantity_cake = input.nextInt();
-//					cakes[i] = new ReadymadeCake(name_cake,rate_cake,quantity_cake);
-//					System.out.println("==================================");
-//					break;
-//				default:
-//					System.out.println("Invalid input");
-//			}
-//		}
 		
-        System.out.println("\t------------------------------Cakes------------------------------");
-        System.out.println("Cake ");
-        cakes[0] = new OrderCake("Chocolate", 584, 5);
-        cakes[1] = new OrderCake("Vanilla", 453, 4);
-        cakes[2] = new OrderCake("Red Velvet", 342, 2);
-        cakes[3] = new OrderCake("Carrot", 352, 5);
-        cakes[4] = new OrderCake("Lemon", 262, 4);
-        cakes[5] = new OrderCake("Strawberry", 666, 1);
-        cakes[6] = new OrderCake("Coconut", 310, 7);
-        cakes[7] = new OrderCake("Marble", 329, 4);
-        cakes[8] = new ReadymadeCake("Black Forest", 222, 9);
-        cakes[9] = new ReadymadeCake("Angel Food", 221, 8);
-        cakes[10] = new ReadymadeCake("German Chocolate", 362, 4);
-        cakes[11] = new ReadymadeCake("Pound", 676, 3);
-        cakes[12] = new ReadymadeCake("Funfetti", 122, 1);
-        cakes[13] = new ReadymadeCake("Tiramisu", 415, 2);
-        cakes[14] = new ReadymadeCake("Pineapple Upside-down", 257, 7);
-        cakes[15] = new Cake("Peanut Butter", 141);
-        cakes[16] = new Cake("Caramel", 562);
-        cakes[17] = new Cake("Apple", 198);
-        cakes[18] = new Cake("Pumpkin", 624);
-        cakes[19] = new Cake("Almond", 619);
-
+		int choice;
+		char type;
+		String s;
+		String name_cake;
+		double rate_cake, weight_cake;
+		int quantity_cake;
+		
+		System.out.println("Do you want user input or automated?");
+		System.out.println("[1] User Input");
+		System.out.println("[2] Automated\n");
+		System.out.print("Choice: ");
+		choice = input.nextInt();
+		
+		switch(choice) {
+			case 1:
+				for(int i = 0; i < SIZE; i++) {
+					System.out.println("==================================");
+					System.out.println("Cake #" + (i+1));
+					System.out.print("Enter NAME of the cake: ");
+					input.nextLine();
+					name_cake = input.next();
+					System.out.print("Enter RATE of the cake: ");
+					input.nextLine();
+					rate_cake = input.nextDouble();
+					System.out.print("[O] Order cake or [R] Ready-made Cake : ");
+					input.nextLine();
+					type = input.next().charAt(0);
+					
+					s = "" + type;
+					s = s.toLowerCase();
+					
+					switch (s) {
+						case "o":
+							System.out.print("Enter cake weight (kg): ");
+							input.nextLine();
+							weight_cake = input.nextDouble();
+							cakes[i] = new OrderCake(name_cake,rate_cake,weight_cake);
+							System.out.println("==================================");
+							break;
+						case "r":
+							System.out.print("Enter quantity: ");
+							input.nextLine();
+							quantity_cake = input.nextInt();
+							cakes[i] = new ReadymadeCake(name_cake,rate_cake,quantity_cake);
+							System.out.println("==================================");
+							break;
+						default:
+							System.out.println("Invalid input");
+					}
+				}
+				break;
+			case 2:
+				System.out.println("\t------------------------------Cakes------------------------------");
+		        cakes[0] = new OrderCake("Chocolate", 584, 5);
+		        cakes[1] = new OrderCake("Vanilla", 453, 4);
+		        cakes[2] = new OrderCake("Red Velvet", 342, 2);
+		        cakes[3] = new OrderCake("Carrot", 352, 5);
+		        cakes[4] = new OrderCake("Lemon", 262, 4);
+		        cakes[5] = new OrderCake("Strawberry", 666, 1);
+		        cakes[6] = new OrderCake("Coconut", 310, 7);
+		        cakes[7] = new OrderCake("Marble", 329, 4);
+		        cakes[8] = new ReadymadeCake("Black Forest", 222, 9);
+		        cakes[9] = new ReadymadeCake("Angel Food", 221, 8);
+		        cakes[10] = new ReadymadeCake("German Chocolate", 362, 4);
+		        cakes[11] = new ReadymadeCake("Pound", 676, 3);
+		        cakes[12] = new ReadymadeCake("Funfetti", 122, 1);
+		        cakes[13] = new ReadymadeCake("Tiramisu", 415, 2);
+		        cakes[14] = new ReadymadeCake("Pineapple Upside-down", 257, 7);
+		        cakes[15] = new Cake("Peanut Butter", 141);
+		        cakes[16] = new Cake("Caramel", 562);
+		        cakes[17] = new Cake("Apple", 198);
+		        cakes[18] = new Cake("Pumpkin", 624);
+		        cakes[19] = new Cake("Almond", 619);
+		        break;
+			default:
+				System.out.println("Invalid Input. Try again");
+				break;
+		}
+		
 		displayCakes(cakes);
 		displayRMC(cakes);
 		displayTotal(cakes);

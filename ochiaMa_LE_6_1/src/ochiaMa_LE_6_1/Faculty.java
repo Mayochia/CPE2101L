@@ -4,6 +4,10 @@ public class Faculty extends Employee {
 	private String officeHours;
 	private String rank;
 	
+	Faculty(){
+		super();
+	}
+	
 	Faculty(String name, String address, String phoneNum, String email, String office, double salary, MyDate hireDate, String officeHours, String rank) {
 		super(name, address, phoneNum, email, office, salary, hireDate);
 		this.officeHours = officeHours;

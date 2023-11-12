@@ -20,7 +20,7 @@ public class OrderCake extends Cake{
 	
 	@Override
 	public String toString() {
-		return "Name: "+ name + "\nRate: " + rate + "\nWeight: "  + weight + "\nPrice: " + calcPrice() + "\n";
+		return "Name: "+ name + "\nRate: " + rate + "\nWeight: "  + weight + " kg" + "\nPrice: " + calcPrice() + "\n";
 	}
 
 }

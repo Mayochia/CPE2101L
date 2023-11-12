@@ -6,6 +6,11 @@ import java.util.Set;
 
 
 public class PerfectSquare extends Factor {
+	
+	PerfectSquare() {
+		super();
+	}
+	
 	PerfectSquare(int number) {
 		super(number);
 	}
