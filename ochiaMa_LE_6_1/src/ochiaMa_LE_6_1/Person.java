@@ -14,7 +14,7 @@ public class Person {
 	private String email;
 	
 	Person(){
-		
+
 	}
 	
 	Person(String name){
@@ -52,9 +52,10 @@ public class Person {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	@Override
 	public String toString() {
-		return "Name: " + name + "\n" + "Address: " + address
+		return "Person\n" + "Name: " + name + "\n" + "Address: " + address
 				+ "\n" + "Phone Number: " + phoneNum + "\n" + 
 				"Email address: " + email;
 	}

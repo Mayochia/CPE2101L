@@ -19,6 +19,7 @@ public class Student extends Person {
         super(name);
         this.status = status;
     }
+    
     Student(String name, String address, String phoneNumber, String email, String status) {
         super(name, address, phoneNumber, email);
         this.status = status;
@@ -33,7 +34,7 @@ public class Student extends Person {
     
 	@Override
 	public String toString() {
-		return "" + super.toString() + "\n" + "Student: " + status;
+		return "Student\n" + super.toString() + "\n" + "Student: " + status;
 	}
 
 }

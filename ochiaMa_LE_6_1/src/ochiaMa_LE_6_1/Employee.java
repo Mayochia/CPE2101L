@@ -38,9 +38,10 @@ public class Employee extends Person{
 	public void setHireDate(MyDate hireDate) {
 		this.hireDate = hireDate;
 	}
+	
 	@Override
 	public String toString() {
-		return "" + super.toString() + "\n" +"Office: " + this.office + "\n" + 
+		return "Employee\n" + super.toString() + "\n" +"Office: " + this.office + "\n" + 
 				"Salary: " + salary + "\n" + "Date Hired: " + hireDate.toString();
 	}
 

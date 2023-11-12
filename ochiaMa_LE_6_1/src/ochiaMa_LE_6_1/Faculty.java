@@ -26,9 +26,10 @@ public class Faculty extends Employee {
 	public void setRank(String rank) {
 		this.rank = rank;
 	}
+	
 	@Override
 	public String toString() {
-		return "" + super.toString()+ "\n" + "Office hours: " + officeHours + "\n" + "Rank: " + rank;
+		return "Faculty\n" + super.toString()+ "\n" + "Office hours: " + officeHours + "\n" + "Rank: " + rank;
     }
 
 }
