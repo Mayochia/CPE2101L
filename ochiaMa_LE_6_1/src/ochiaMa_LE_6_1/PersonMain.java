@@ -1,9 +1,6 @@
-/**
- * 
- */
 package ochiaMa_LE_6_1;
 
-public class School {
+public class PersonMain {
 	
 	public static void displayInfo(Person person, Student student, Employee employee, Faculty faculty, Staff staff) {
 		System.out.println("=======================");
