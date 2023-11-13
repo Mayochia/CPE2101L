@@ -29,7 +29,7 @@ public class Staff extends Employee{
 	
 	@Override
 	public String toString() {
-		return "Staff\n" + super.toString() + "\n"+ "Title: " + title;
+		return super.toString() + "\n"+ "Title: " + title;
 	}
 
 }
