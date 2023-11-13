@@ -8,13 +8,13 @@ public class PerfectSquareMain {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
         System.out.print("Enter an integer m: ");
-        int num = input.nextInt();
+        int m = input.nextInt();
 
-        PerfectSquare factorization = new PerfectSquare(num);
+        PerfectSquare factorization = new PerfectSquare(m);
         int n = factorization.findProdN();
 
         System.out.println("The smallest number n for m * n to be a perfect square is " + n);
-        System.out.println("m * n is " + (num * n));
+        System.out.println("m * n is " + (m * n));
         
         input.close();
 	}
