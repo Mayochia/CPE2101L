@@ -20,7 +20,7 @@ public class OrderCake extends Cake{
 	
 	@Override
 	public String toString() {
-		return "Name: "+ name + "\nRate: " + rate + "\nWeight: "  + weight + " kg" + "\nPrice: " + calcPrice() + "\n";
-	}
+		return String.format("%-20s/kg\t\t%.2f kg\t\t%.2f", super.toString(), weight, calcPrice());
+    }
 
 }

@@ -5,22 +5,36 @@ import java.util.Scanner;
 public class CakeShop {
 	static final int SIZE = 20;
 	
-	public static void displayCakes(Cake[] cakes) {
-		for(int i=0; i < cakes.length; i++) {
-			System.out.print(i+1 + ". ");
-			System.out.println(cakes[i].toString());
-		}
-	}
-	
-	public static void displayRMC(Cake[] cakes) {
-	    System.out.println("\t---------------------------ReadyMadeCakes-------------------------");
-	    for (int i = 0; i < cakes.length; i++) {
-	        if (cakes[i] instanceof ReadymadeCake) {
-	            System.out.println(cakes[i].toString());
+	public static void displayCake(Cake[] cakes) {
+		System.out.println("---------------------------Cake-------------------------");
+		System.out.println(String.format("%-20s %-10s ", "Name", "Rate"));
+        for (Cake cake : cakes) {
+            if (cake instanceof Cake && !(cake instanceof OrderCake) && !(cake instanceof ReadymadeCake)) {
+                System.out.println(cake.toString());
+            }
+        }
+
+        
+    }
+	public static void displayOC(Cake[] cakes) {
+		System.out.println("---------------------------OrderCakes-------------------------");
+		System.out.println(String.format("%-20s %-10s \t\t%-10s \t%-10s", "Name", "Rate", "Weight", "Price"));
+	    for (Cake cake : cakes) {
+	        if (cake instanceof OrderCake) {
+	            System.out.println(cake.toString());
 	        }
 	    }
 	}
 	
+	public static void displayRMC(Cake[] cakes) {		
+		System.out.println("---------------------------ReadyMadeCakes-------------------------");
+		System.out.println(String.format("%-20s %-10s \t%-10s \t%-10s", "Name", "Rate", "Quantity", "Price"));
+	    for (Cake cake : cakes) {
+	        if (cake instanceof ReadymadeCake) {
+	            System.out.println(cake.toString());
+	        }
+	    }
+	}
 	
 	public static void displayTotal(Cake[] cakes) {
 		double totalPrice_RMC = 0;
@@ -133,34 +147,35 @@ public class CakeShop {
 				}
 				break;
 			case 2:
-				System.out.println("\t------------------------------Cakes------------------------------");
-		        cakes[0] = new OrderCake("Chocolate", 584, 5);
-		        cakes[1] = new OrderCake("Vanilla", 453, 4);
-		        cakes[2] = new OrderCake("Red Velvet", 342, 2);
-		        cakes[3] = new OrderCake("Carrot", 352, 5);
-		        cakes[4] = new OrderCake("Lemon", 262, 4);
-		        cakes[5] = new OrderCake("Strawberry", 666, 1);
-		        cakes[6] = new OrderCake("Coconut", 310, 7);
-		        cakes[7] = new OrderCake("Marble", 329, 4);
-		        cakes[8] = new ReadymadeCake("Black Forest", 222, 9);
-		        cakes[9] = new ReadymadeCake("Angel Food", 221, 8);
-		        cakes[10] = new ReadymadeCake("German Chocolate", 362, 4);
-		        cakes[11] = new ReadymadeCake("Pound", 676, 3);
-		        cakes[12] = new ReadymadeCake("Funfetti", 122, 1);
-		        cakes[13] = new ReadymadeCake("Tiramisu", 415, 2);
-		        cakes[14] = new ReadymadeCake("Pineapple Upside-down", 257, 7);
-		        cakes[15] = new Cake("Peanut Butter", 141);
-		        cakes[16] = new Cake("Caramel", 562);
-		        cakes[17] = new Cake("Apple", 198);
-		        cakes[18] = new Cake("Pumpkin", 624);
-		        cakes[19] = new Cake("Almond", 619);
+				System.out.println("---------------------------All Cakes------------------------------");
+				cakes[0] = new Cake("Peanut Butter", 141);
+		        cakes[1] = new Cake("Caramel", 562);
+		        cakes[2] = new Cake("Apple", 198);
+		        cakes[3] = new Cake("Pumpkin", 624);
+		        cakes[4] = new Cake("Almond", 619);
+		        cakes[5] = new OrderCake("Chocolate", 584, 5);
+		        cakes[6] = new OrderCake("Vanilla", 453, 4);
+		        cakes[7] = new OrderCake("Red Velvet", 342, 2);
+		        cakes[8] = new OrderCake("Carrot", 352, 5);
+		        cakes[9] = new OrderCake("Lemon", 262, 4);
+		        cakes[10] = new OrderCake("Strawberry", 666, 1);
+		        cakes[11] = new OrderCake("Coconut", 310, 7);
+		        cakes[12] = new OrderCake("Marble", 329, 4);
+		        cakes[13] = new ReadymadeCake("Black Forest", 222, 9);
+		        cakes[14] = new ReadymadeCake("Angel Food", 221, 8);
+		        cakes[15] = new ReadymadeCake("German Chocolate", 362, 4);
+		        cakes[16] = new ReadymadeCake("Pound", 676, 3);
+		        cakes[17] = new ReadymadeCake("Funfetti", 122, 1);
+		        cakes[18] = new ReadymadeCake("Tiramisu", 415, 2);
+		        cakes[19] = new ReadymadeCake("Pineapple", 257, 7);
 		        break;
 			default:
 				System.out.println("Invalid Input. Try again");
 				break;
 		}
 		
-		displayCakes(cakes);
+		displayCake(cakes);
+		displayOC(cakes);
 		displayRMC(cakes);
 		displayTotal(cakes);
 		displayTotalRMC(cakes);

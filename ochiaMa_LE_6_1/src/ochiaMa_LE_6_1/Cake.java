@@ -16,7 +16,7 @@ public class Cake {
 	}
 	
 	public String toString() {
-		return name + "\t" + rate;
+		return String.format("%-20s %.2f", name, rate);
 	}
 
 }

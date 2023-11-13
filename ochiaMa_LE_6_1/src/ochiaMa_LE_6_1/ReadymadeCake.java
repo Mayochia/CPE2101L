@@ -25,6 +25,6 @@ public class ReadymadeCake extends Cake{
 	
 	@Override
 	public String toString() {
-		return "Name: "+ name + "\nRate: " + rate + "\nQuantity:"  + quantity + "\nPrice: " + calcPrice() + "\n";
+		return String.format("%-20s/quantity\t%d\t\t%.2f", super.toString(), quantity, calcPrice());
 	}
 }
